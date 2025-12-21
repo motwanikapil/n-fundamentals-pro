@@ -1,30 +1,3 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
 ## Project setup
 
 ```bash
@@ -98,6 +71,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 
 ### Nestjs notes
+
 - modules consists of providers, controllers, imports and exports
 - providers in nestjs are classes that acts as services, factories and repositories
 - controllers serve the function of handling http requests and sending responses back to the client.
@@ -105,3 +79,68 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 - provides a structured way to build scalable and testable applications
 - solves the limitations of traditional express apps.
 - business logic and calculations in service files and controllers calls the methods from these services files.
+
+#### Controllers
+
+- organize api endpoints clearly and modularity
+- help separate concerns: routing vs business logic
+- make code scalable and maintainable
+- improve code readability with clean structure.
+- to create controller - nest g controller controllerName
+
+#### Decorators
+
+- gives additional behaviour to method, class, paramaters
+- special functions that add metadata to classes or methods
+
+#### Services
+
+- a ts class with logic like calculations, data access etc.
+- used to write business logic in a clean and reusable way.
+- they are marked with @Injectable so nestjs can use them.
+- inject services into controllers using contructor injection
+- services are a part of dependency injection system.
+- to generate service - nest generate service product ( generate can be used as g and service can be used as s)
+
+#### Modules
+
+- a container where we keep related controllers, services and providers for our application
+- core part of nestjs architecture
+- every nestjs app has atleast one module.
+- organizes the app into features
+- to create module - nest generate module employee
+
+#### Features
+
+- nestjs architecture is modular, scalable and maintainable
+- this pattern helps in writing reusable and well-structured code
+
+#### Providers
+
+- any class that can be injected and reused ( like service, custom classes , etc )
+- registered in the module to be used via dependency injection
+
+#### Dependency Injection
+
+- nestjs automatically provides services where they are needed.
+- you don't create new instances manually
+- improves testability and reusability.
+- it makes testing easier
+- it promotes loose coupling ( classes don't tightly depend on each other )
+- it improves readability and maintainability
+
+#### API
+
+- Application Programming interface
+- it allows two application to talk to each other
+- acts as a bridge between frontend and backend
+
+#### REST
+
+- Representation State Transfer
+- simple, scalable and stateless communication
+
+#### DTO ( Data transfer object )
+
+- dto files helps for compile time type checking not runtime type checking
+- so from frontend whatever data is sent is not checked if we use dto or not.
