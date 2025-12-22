@@ -144,3 +144,76 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 
 - dto files helps for compile time type checking not runtime type checking
 - so from frontend whatever data is sent is not checked if we use dto or not.
+
+#### for frontend type checking we use two packages
+
+- class-validator and class-transformer
+- class transformer converts the json data to objects and class validator validates that objects.
+
+#### Pipes
+
+- pipes are used to transform or validate incoming data
+- nestjs allows you to create your own custom pipes
+- they can be used for custom validatoin, data transformation, or business logic filtering.
+- it runs before the data hits the route handler ( controller method )
+- you can apply pipes at method level, controller level or globally
+- custom pipes implement the PipeTransform Interface.
+- nest g pipe common/pipes/uppercase
+
+#### Protecting routes
+
+- it means restricting access to specific api routes.
+- only authorized users ( like logged-in users or admins ) can access them.
+- this is done using Guards
+
+#### Guards
+
+- they are classes that implement logic to decide whether a request is allowed or not.
+- the implement the CanActivate interface and run before the route handler
+- mostly used for authentication ( user is logged in or not ) and authorization ( what features is the user allowed to do kind of role based system ) .
+- to avoid duplicating checks in every controller
+- nest g guard guards/auth
+
+#### Exception filters
+
+- handle errors and exceptions in a centralized way
+- help in managing app-wide error handling logic cleanly and consistently
+- filters can be applied at method-level, controller-level or globally ( main.ts )
+- @Catch() decorator is used to define which exception the filter will handle
+- they can be generated using : nest g filter filters/http-exception
+
+#### Middleware
+
+- middleware runs before the request reaches the controller.
+- logging incoming requests
+- authentication tokens ( eg. checking JWT )
+- request transformation ( eg. converting strings to numbers )
+- blocking or redirecting requests
+- setting headers
+- nest g middleware middleware/logger
+
+#### middleware vs guard
+
+- guard
+  - before route is accessed ( based on auth )
+  - authorization ( role check, access allowed? )
+- middleware
+  - can't use the concepts of nestjs like role base authorization etc.
+
+#### lifecycle events
+
+- special methods / hooks provided by nestjs
+- automatically called at different stages of a module/service/component's life.
+- used to perform actions during creation or destruction.
+- helps run some code when app/module/service is initialized.
+- helps run cleanup code when app/module/service is destroyed
+- useful for tasks like DB connections, logging, resource cleanup, etc.
+- onModuleInit() - called when the module is initialized
+- onModuleDestroy() - called before the module is destroyed.
+- afterModuleInit() (optional) - called after all modules are initialized
+- onApplicationBootstrap() -> when app is fully bootstrapped
+- onApplicationShutdown() -> called when app is shutting down.
+
+#### Environment variables
+
+- @nestjs/config package is used for that
