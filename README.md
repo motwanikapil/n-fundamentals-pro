@@ -217,3 +217,25 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 #### Environment variables
 
 - @nestjs/config package is used for that
+
+#### Data relationship
+
+- one to one relationship
+- one to many relationship
+- many to many relationship
+
+#### embedding
+
+- keeping the data in single document
+
+#### referencing
+
+- referencing the data in separate document
+- little bit slow
+
+#### TYPE Orm
+
+- it is an object relational mapper for ts
+- it connects nestjs app with postgresql using oop style code.
+- you define tables as classes using decorators like @Entity, @Column etc
+- it makes database queries easier, readable and type-safe

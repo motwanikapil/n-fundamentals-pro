@@ -19,6 +19,12 @@ import { EvService } from './ev/ev.service';
 import { EvController } from './ev/ev.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { StudentMongoModule } from './student_mongo/student_mongo.module';
+import { UserMongo1To1Controller } from './user-mongo-1-to-1/user-mongo-1-to-1.controller';
+import { UserMongo1To1Service } from './user-mongo-1-to-1/user-mongo-1-to-1.service';
+import { UserMongo1To1Module } from './user-mongo-1-to-1/user-mongo-1-to-1.module';
+import { MEmployeeModule } from './m-employee/m-employee.module';
+import { LibraryModule } from './library/library.module';
+import { ProjectModule } from './project/project.module';
 
 @Module({
   imports: [
@@ -31,6 +37,10 @@ import { StudentMongoModule } from './student_mongo/student_mongo.module';
     }),
     MongooseModule.forRoot(process.env.MONGO_URI!),
     StudentMongoModule,
+    UserMongo1To1Module,
+    MEmployeeModule,
+    LibraryModule,
+    ProjectModule,
   ],
   controllers: [
     AppController,
